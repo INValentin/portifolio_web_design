@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --grad-color-1: #65dfc9;
+    --grad-color-2: #6cdbed;
+}
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to bottom right, var(--grad-color-1), var(--grad-color-2));
+}
+
+img {
+    max-width: 100%;
+    object-position: top;
+    height: auto;
+    object-fit: cover;
+}
+
+.circle,
+.glass {
+    background: rgba(255, 255, 255);
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, .8), rgba(255, 255, 255, .3));
+}
+
+.glass {
+    position: relative;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    min-height: 80vh;
+    max-width: 800px;
+    z-index: 5;
+    color: #59839c;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.circle-1,
+.circle-2 {
+    background: rgba(255, 255, 255);
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, .65), rgba(255, 255, 255, 0.2));
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 54%;
+    z-index: 2;
+    left: 10%;
+}
+
+.circle-2 {
+    top: 5%;
+    left: 70%;
+}
+
+.glass aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-around;
+    padding: 10px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 ;
+}
+
+.person .avatar {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.person h5 {
+    font-weight: 900;
+}
+.desc {
+    font-weight: lighter;
+    margin: 10px;
+}
+
+aside .items {
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+aside .items .item {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.item .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip {
+    margin-top: 20px;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #69ded8;
+    align-items: center;
+}
+
+.tip .text {
+    flex: 1;
+    color: rgba(255, 255, 255, 0.856);
+    font-weight: 900;
+    padding-right: 5px;
+    font-size: xx-large;
+}
+
+.tip .img {
+    overflow: hidden;
+    max-width: 40%;
+}
+
+/* content part */
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h1.title {
+    margin: 1rem 0 2rem;
+    font-size: 2rem;
+}
+
+.game-list  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-list .game {
+    background-color: rgba(255,255,255,.9);
+    padding: .7rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3.4fr .2fr;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 1px 2px 3px #00000035;
+}
+
+.game .avatar {
+    padding: .3rem;
+    box-shadow: 0 0 30px 1px #6cdfda;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+}
+
+.game .avatar img {
+    height: 100%;
+    border-radius: inherit;
+    width: 100%;
+    object-position: center;
+}
+
+.progress-wrapper {
+    background-color: #cfd3d2;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    padding: 1rem;
+    width: 73%;
+    background-color: #6cdfda;
+}
+
+h4.percentage{
+    align-self: flex-start;
+    color: #6cdfda;
+}
+
+
+@media screen and (max-width: 700px) {
+    html, body {
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    aside {
+        padding: 2rem!important;
+    }
+    aside .items{
+        background: linear-gradient();
+        align-items: flex-start;
+        padding: 2rem;
+    }
+    .items .item {
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    .glass {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+
+    .content {
+        align-items: center;
+    }
+
+    h1, h2, h3, h4, h5, .title {
+        text-align: center!important;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .person .avatar {
+        width: 200px;
+        margin-bottom: 1rem;
+        border: #65dfc9 2px solid;
+        height: 200px;
+    }
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 10px;
+    border: 1px solid #65dfc9;
+    background: radial-gradient(#65dfc9, transparent, #6cdbed);
+    cursor: pointer;
+    box-shadow: 0 0 4px 2px #ffffff70;
+    position: fixed;
+    bottom: 0;
+    color: inherit;
+    right: 0;
+    opacity: .3;
+    letter-spacing: 2px;
+    transition: .4s;
+}
+
+button:hover {
+    opacity: 1;
+} 
